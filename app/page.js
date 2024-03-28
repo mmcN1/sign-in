@@ -5,14 +5,12 @@ import Image from "next/image";
 import SignUp from "./images/illustration-sign-up-desktop.svg";
 import { InputForm } from "./components/InputForm";
 import { Basic } from "./components/Basic";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [validate, setValidate] = useState(null);
-
-  console.log(validate)
 
   const handleChange = (event) => {
     setEmail(event.target.value);
@@ -35,9 +33,7 @@ export default function Home() {
         <section className="flex flex-col justify-center items-center text-center pb-2 w-full">
           <Basic />
           <section className="flex flex-col justify-center items-center  text-center">
-            <Suspense>
             <InputForm validate={validate} email={email} handleClick={handleClick} handleChange={handleChange} validateRe={validateRe}  />
-            </Suspense>
           </section>
         </section>
         <section className="m-4">

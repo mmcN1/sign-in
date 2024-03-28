@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 import SuccessIco from "../images/icon-success.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +12,7 @@ const Confirm = () => {
 
   return (
     <main className="flex  min-h-screen text-xs justify-center items-center bg-slate-600 md:text-lg ">
+      <Suspense>
       <section className="flex flex-col justify-evenly w-full md:justify-around  md:w-1/2 h-screen md:h-2/3 bg-gradient-to-t from-green-100 to-slate-100 p-5">
         
         <div className="m-5">
@@ -27,6 +28,7 @@ const Confirm = () => {
         </div>
         <Link href="/" className="flex justify-center p-5 m-auto w-2/3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded hover:scale-95 ease-linear duration-300">Dismiss Message</Link>
       </section>
+      </Suspense>
     </main>
   );
 };
