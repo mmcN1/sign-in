@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { Suspense } from "react";
+
 export const InputForm = ({
   validate,
   email,
@@ -29,6 +31,7 @@ export const InputForm = ({
         type="email"
         required
       >
+        <Suspense>
         <Link
           href={{
             pathname: email.match(validateRe) ? "/confirm" : "/",
@@ -38,6 +41,7 @@ export const InputForm = ({
         >
           Submit
         </Link>
+        </Suspense>
       </button>
     </>
   );
