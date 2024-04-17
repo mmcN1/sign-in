@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Confirm = () => {
   const searchParams = useSearchParams();
-  const email = searchParams.get("email");
+  const email = searchParams ? searchParams.get("email") : '';
 
   return (
     <main className="flex  min-h-screen text-xs justify-center items-center bg-slate-600 md:text-lg ">
