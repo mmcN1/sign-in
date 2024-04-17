@@ -9,13 +9,13 @@ const EmailInfo = () => {
     const searchParams = useSearchParams();
   const email =searchParams.get("email");
   return (
-    <Suspense fallback="loading ...">
+    
       <p className="tracking-normal">
             A confirmation email has been sent to <strong>{email}</strong>.
             Please open it and click the button inside to confirm your
             subscription.
       </p>
-    </Suspense>
+    
   )
 }
 const Confirm = () => {
@@ -31,7 +31,9 @@ const Confirm = () => {
           <h1 className="text-3xl font-bold font-sans m-12">
             Thanks for subscribing!
           </h1>
+            <Suspense fallback="loading ...">
         <EmailInfo />
+                </Suspense>
         </div>
         <Link href="/" className="flex justify-center p-5 m-auto w-2/3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded hover:scale-95 ease-linear duration-300">Dismiss Message</Link>
       </section>
