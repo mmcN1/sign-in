@@ -12,7 +12,7 @@ export const InputForm = ({
     <>
       <div className="flex justify-between w-full">
         <h1>Email Address</h1>
-        {validate === false ? <p className="text-red-500 font-light">This email is invalid!</p> : null}
+        {validate === false ? <p className="text-red-500 font-light text-xs">This email is invalid!</p> : null}
       </div>
 
       <input
